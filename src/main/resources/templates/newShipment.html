@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>New Pharmacy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<form th:method="POST" th:action="@{/addshipment}" th:object="${newShipment}">
+    <!--suppress XmlInvalidId -->
+    <label for="pharmacyId">ID::</label>
+    <td th:text="${pharmacy.id}" name="pharmacyId">Id</td>
+    <br/>
+    <label for="medicineTitle">Enter medicine title:</label>
+    <input type="text" th:field="*{medicineTitle}" id="medicineTitle">
+    <br/>
+    <label for="shipmentData">Enter shipment date:</label>
+    <input type="text" th:field="*{shipmentDate}" id="shipmentData">
+    <br/>
+    <label for="expirationDate">Enter expiration date:</label>
+    <input type="text" th:field="*{expirationDate}" id="expirationDate">
+    <br/>
+    <label for="medicineQuantity">Enter medicine quantity:</label>
+    <input type="text" th:field="*{medicineQuantity}" id="medicineQuantity">
+    <br/>
+    <label for="phone">Enter phone:</label>
+    <input type="text" th:field="*{phone}" id="phone">
+
+    <br/>
+    <input type="submit" value="Add">
+</form>
+
+
+
+</body>
+</html>

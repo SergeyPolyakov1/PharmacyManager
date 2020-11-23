@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pharmacies</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<h2>List of vendors</h2>
+
+<div th:each="vendor : ${vendors}">
+    <a th:href="@{/vendors/{id}(id=${vendor.getId()})}" th:text="vendor + ${vendor.getId()}">vendorId</a>
+</div>
+
+<br/>
+
+<div>
+    <a th:href="@{/newvendor}">NEW VENDOR</a>
+</div>
+
+</body>
+</html>
